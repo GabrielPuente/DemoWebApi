@@ -1,14 +1,14 @@
 ﻿using Demo.Core.Data;
 using Demo.Domain.Entities;
-using Demo.Infrastructure.Data.Context;
-using Demo.Infrastructure.Data.Interfaces;
+using Demo.Infrastructure.Context;
+using Demo.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Demo.Infrastructure.Data.Repositories
+namespace Demo.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {

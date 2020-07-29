@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Demo.Infrastructure.Data.Interfaces
+namespace Demo.Infrastructure.Interfaces
 {
     public interface IUserRepository : IRepository
     {

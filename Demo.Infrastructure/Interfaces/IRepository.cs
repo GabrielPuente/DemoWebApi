@@ -1,6 +1,6 @@
 ﻿using Demo.Core.Data;
 
-namespace Demo.Infrastructure.Data.Interfaces
+namespace Demo.Infrastructure.Interfaces
 {
     public interface IRepository
     {

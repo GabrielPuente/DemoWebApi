@@ -57,8 +57,9 @@ namespace Demo.WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] User userSent)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState.Values.SelectMany(u => u.Errors));
+            var validateResult = userSent.UserValidade();
+            if(validateResult.Errors.Any())
+                return BadRequest(validateResult.Errors.Select(x => x.ErrorMessage));
 
             var user = _userService.Post(userSent);
             return Ok(user);

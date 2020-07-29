@@ -1,11 +1,11 @@
 ﻿using Demo.Core.Data;
 using Demo.Domain.Entities;
-using Demo.Infrastructure.Data.Mapping;
+using Demo.Infrastructure.Mapping;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
-namespace Demo.Infrastructure.Data.Context
+namespace Demo.Infrastructure.Context
 {
     public class DataContext : DbContext, IUnitOfWork
     {

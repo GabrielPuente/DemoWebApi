@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Demo.Infrastructure.Data.Mapping
+namespace Demo.Infrastructure.Mapping
 {
     public static class Mapping
     {

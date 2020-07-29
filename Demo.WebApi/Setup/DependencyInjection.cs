@@ -1,5 +1,5 @@
-﻿using Demo.Infrastructure.Data.Interfaces;
-using Demo.Infrastructure.Data.Repositories;
+﻿using Demo.Infrastructure.Interfaces;
+using Demo.Infrastructure.Repositories;
 using Demo.Service.Interfaces;
 using Demo.Service.Services;
 using Microsoft.EntityFrameworkCore;

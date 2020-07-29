@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using Demo.Domain.Entities;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
@@ -9,7 +8,7 @@ namespace Demo.Core.Util
 {
     public static class JwtToken
     {
-        public static string GenerateToken(User user, string secret)
+        public static string GenerateToken(string name, string secret)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secret);
@@ -17,7 +16,7 @@ namespace Demo.Core.Util
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Name.ToString())
+                    new Claim(ClaimTypes.Name, name)
                 }),
                 Expires = DateTime.UtcNow.AddHours(3),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

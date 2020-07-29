@@ -9,7 +9,7 @@ namespace Demo.Domain.Entities
     public abstract class Entity
     {
         /// <summary>
-        /// Id tabela
+        /// Table id
         /// </summary>
         public Guid Id { get; set; }
 
@@ -19,7 +19,7 @@ namespace Demo.Domain.Entities
         public DateTime DateRegister { get; set; }
 
         /// <summary>
-        /// Dado ativo
+        /// Active
         /// </summary>
         [Required]
         public bool Active { get; set; }

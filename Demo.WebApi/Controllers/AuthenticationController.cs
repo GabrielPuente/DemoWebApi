@@ -43,7 +43,7 @@ namespace Demo.WebApi.Controllers
                 return BadRequest("Password incorrect!");
 
             var key = _configuration["Authentication:Secret"];
-            var token = JwtToken.GenerateToken(user, key);
+            var token = JwtToken.GenerateToken(user.Name, key);
 
             user.Password = "";
 

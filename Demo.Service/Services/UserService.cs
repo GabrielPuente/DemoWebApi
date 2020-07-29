@@ -1,6 +1,6 @@
 ﻿using Demo.Core.Util;
 using Demo.Domain.Entities;
-using Demo.Infrastructure.Data.Interfaces;
+using Demo.Infrastructure.Interfaces;
 using Demo.Service.Interfaces;
 using System;
 using System.Collections.Generic;

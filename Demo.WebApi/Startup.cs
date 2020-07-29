@@ -1,4 +1,4 @@
-using Demo.Infrastructure.Data.Context;
+using Demo.Infrastructure.Context;
 using Demo.WebApi.Setup;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;

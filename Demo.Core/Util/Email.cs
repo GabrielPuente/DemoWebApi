@@ -8,11 +8,12 @@ namespace Demo.Core.Util
     {
         public static bool Enviar(string email)
         {
+            // TODO: Refatorar 
             try
             {
                 MailMessage _mailMessage = new MailMessage
                 {
-                    From = new MailAddress("Email")
+                    From = new MailAddress("ga_lok.10@hotmail.com")
                 };
 
                 _mailMessage.CC.Add(email);
@@ -20,10 +21,10 @@ namespace Demo.Core.Util
                 _mailMessage.IsBodyHtml = true;
                 _mailMessage.Body = "Corpo email";
 
-                SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", Convert.ToInt32("587"))
+                SmtpClient _smtpClient = new SmtpClient("smtp.live.com", Convert.ToInt32("587"))
                 {
                     UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential("Email", "Senha"),
+                    Credentials = new NetworkCredential("email", "senha"),
                     EnableSsl = true
                 };
 
@@ -32,6 +33,7 @@ namespace Demo.Core.Util
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
