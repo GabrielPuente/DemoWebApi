@@ -1,2 +1,2 @@
 # DemoWebApi
-Treinando e aplicando boas praticas. Autenticação via JWT bearer, swagger, repository pattern e mais
+Training and applying good practices. Authentication  jwt bearer, swagger, repository pattern.
