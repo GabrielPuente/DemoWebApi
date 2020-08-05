@@ -17,10 +17,9 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "LpLive.WebApi": {
+    "TurtlePizzaria.Application": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Campanha",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
