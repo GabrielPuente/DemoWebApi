@@ -2,9 +2,15 @@
 {
     public static class Validate
     {
+
+        public static string ClearCpf(string cpf)
+        {
+            return cpf.Replace(".", "").Replace("-", "");
+        }
+
         public static bool Cpf(string cpf)
         {
-            cpf = cpf.Replace(".", "").Replace("-", "");
+            cpf = ClearCpf(cpf);
 
             if (cpf.Length > 11)
                 return false;

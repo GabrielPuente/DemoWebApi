@@ -8,4 +8,8 @@
     <PackageReference Include="FluentValidation" Version="9.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TurtlePizzaria.Core\TurtlePizzaria.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -40,11 +40,11 @@ namespace TurtlePizzaria.WebApi
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(u =>
+            .AddJwtBearer(x =>
             {
-                u.RequireHttpsMetadata = false;
-                u.SaveToken = true;
-                u.TokenValidationParameters = new TokenValidationParameters
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
@@ -66,7 +66,7 @@ namespace TurtlePizzaria.WebApi
 
             app.UseRouting();
 
-            app.UseCors(u => u
+            app.UseCors(x => x
                         .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()

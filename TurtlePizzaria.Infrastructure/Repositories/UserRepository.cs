@@ -15,13 +15,13 @@ namespace TurtlePizzaria.Infrastructure.Repositories
         private readonly DataContext _context;
         private readonly DbSet<User> _dbSet;
 
+        public IUnitOfWork UnitOfWork => _context;
+
         public UserRepository(DataContext context)
         {
             _context = context;
             _dbSet = _context.Users;
         }
-
-        public IUnitOfWork UnitOfWork => _context;
 
         public void Post(User user)
         {
@@ -42,12 +42,12 @@ namespace TurtlePizzaria.Infrastructure.Repositories
 
         public User Get(Guid id)
         {
-            return _dbSet.AsNoTracking().Where(u => u.Id == id && u.Active).FirstOrDefault();
+            return _dbSet.AsNoTracking().Where(x => x.Id == id && x.Active).FirstOrDefault();
         }
 
         public IEnumerable<User> GetList()
         {
-            return _dbSet.AsNoTracking().Where(u => u.Active).ToList();
+            return _dbSet.AsNoTracking().Where(x => x.Active).ToList();
         }
 
         public User GetExpression(Expression<Func<User, bool>> expression)

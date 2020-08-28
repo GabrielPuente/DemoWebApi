@@ -12,11 +12,11 @@ namespace TurtlePizzaria.WebApi.Setup
     {
         public static IServiceCollection AddSwaggerDocumentation(this IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(x =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Turtle pizzaria", Version = "v1", });
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "Turtle pizzaria", Version = "v1", });
 
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = "Autorizador da API por Token JWT. \r\n\r\n Utilize o input abaixo no seguinte formato: 'Bearer ' + Toke JWT Gerado  .\r\n\r\nExemplo: \"Bearer 12345abcdef\"",
                     Name = "Authorization",
@@ -25,7 +25,7 @@ namespace TurtlePizzaria.WebApi.Setup
                     Scheme = "Bearer"
                 });
 
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                x.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
                     {
                         new OpenApiSecurityScheme
@@ -45,7 +45,7 @@ namespace TurtlePizzaria.WebApi.Setup
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
+                x.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
 
             return services;
@@ -54,10 +54,10 @@ namespace TurtlePizzaria.WebApi.Setup
         public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI(x =>
             {
-                c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                x.RoutePrefix = string.Empty;
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
 
             return app;

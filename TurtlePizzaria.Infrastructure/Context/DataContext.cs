@@ -13,6 +13,11 @@ namespace TurtlePizzaria.Infrastructure.Context
            : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Pizza> Pizzas { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<PizzaIngredient> PizzaIngredients { get; set; }
+        public DbSet<PizzaOrder> PizzaOrders { get; set; }
 
         public bool Commit()
         {
@@ -30,6 +35,11 @@ namespace TurtlePizzaria.Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMapping());
+            modelBuilder.ApplyConfiguration(new PizzaMapping());
+            modelBuilder.ApplyConfiguration(new IngredientMapping());
+            modelBuilder.ApplyConfiguration(new OrderMapping());
+            modelBuilder.ApplyConfiguration(new PizzaIngredientMapping());
+            modelBuilder.ApplyConfiguration(new PizzaOrderMapping());
         }
     }
 }

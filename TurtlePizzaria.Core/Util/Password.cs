@@ -49,7 +49,7 @@ namespace TurtlePizzaria.Core.Util
 
             StringBuilder password = new StringBuilder();
             Random random = new Random();
-            var length = new Random().Next(5, 10);
+            var length = random.Next(5, 10);
 
             while (password.Length < length)
             {

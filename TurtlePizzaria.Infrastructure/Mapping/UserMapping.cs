@@ -12,7 +12,9 @@ namespace TurtlePizzaria.Infrastructure.Mapping
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(100).IsRequired();
-            builder.Property(x => x.Password).HasMaxLength(100).IsRequired();
+            builder.Property(x => x.Cpf).HasMaxLength(14).IsRequired();
+            builder.Property(x => x.Password).HasMaxLength(255).IsRequired();
+            builder.CreateDefaultProperties();
         }
     }
 }

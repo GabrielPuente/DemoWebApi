@@ -55,9 +55,10 @@ namespace TurtlePizzaria.WebApi.Controllers
         /// <param name="userSent">User obj</param>
         /// <returns>user</returns>
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Post([FromBody] User userSent)
         {
-            var validateResult = userSent.UserValidade();
+            var validateResult = userSent.Validade();
             if (validateResult.Errors.Any())
                 return BadRequest(validateResult.Errors.Select(x => x.ErrorMessage));
 
@@ -78,16 +79,10 @@ namespace TurtlePizzaria.WebApi.Controllers
             if (user is null)
                 return BadRequest("User not found!");
 
-            var validateResult = userSent.UserValidade();
+            var validateResult = userSent.Validade();
             if (validateResult.Errors.Any())
                 return BadRequest(validateResult.Errors.Select(x => x.ErrorMessage));
 
-            if (!string.IsNullOrEmpty(user.Password))
-                user.Password = Password.PasswordHash(user.Password);
-            else
-                userSent.Password = user.Password;
-
-            userSent.Id = id;
             user = _userService.Put(userSent);
             return Ok(user);
         }

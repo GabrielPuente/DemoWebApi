@@ -8,6 +8,11 @@ namespace TurtlePizzaria.Domain.Entities
     /// </summary>
     public abstract class Entity
     {
+        protected Entity()
+        {
+            Id = Guid.NewGuid();
+        }
+
         /// <summary>
         /// Table id
         /// </summary>
@@ -23,10 +28,5 @@ namespace TurtlePizzaria.Domain.Entities
         /// </summary>
         [Required]
         public bool Active { get; set; }
-
-        protected Entity()
-        {
-            Id = Guid.NewGuid();
-        }
     }
 }
